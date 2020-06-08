@@ -49,7 +49,7 @@
         $findNearest = $('#find-nearest'),
         $status = $('#status');
     
-    $.getJSON('LTE1800.geojson', function(data) {
+    $.getJSON('https://github.com/jmz84/4G/blob/master/LTE1800.geojson', function(data) {
   
         $body.addClass('loaded');
         
