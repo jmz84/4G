@@ -39,7 +39,7 @@
 .on('markgeocode', function(event) {
     var center = event.geocode.center;
 	         var currentPos = [center.lat, center.lng];    
-                queryFeatures(currentPos, 8);
+                queryFeatures(currentPos, 10);
 })
 .addTo(map);
 
@@ -49,7 +49,7 @@
         $findNearest = $('#find-nearest'),
         $status = $('#status');
     
-    $.getJSON('https://github.com/jmz84/4G/blob/master/LTE1800.geojson', function(data) {
+    $.getJSON('https://data.anfr.fr/api/records/2.0/downloadfile/format=geojson&refine.generation=4G&refine.adm_lb_nom=FREE+MOBILE&resource_id=7a2457be-a5f1-4075-8481-4515fc90acc0', function(data) {
   
         $body.addClass('loaded');
         
@@ -139,7 +139,7 @@
 			var infos = l.feature.properties;
             var distance = L.latLng(currentPos).distanceTo(l.getLatLng())/1000;
             
-			  if(distance < distances[numResults]) {
+			  if(distance < numResults) {
    
 
 
