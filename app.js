@@ -49,7 +49,7 @@
         $findNearest = $('#find-nearest'),
         $status = $('#status');
     
-    $.getJSON('https://data.anfr.fr/api/records/2.0/downloadfile/format=geojson&refine.generation=4G&refine.adm_lb_nom=FREE+MOBILE&resource_id=7a2457be-a5f1-4075-8481-4515fc90acc0', function(data) {
+$.getJSON('https://github.com/jmz84/4G/blob/master/LTE1800.geojson', function(data) {
   
         $body.addClass('loaded');
         
