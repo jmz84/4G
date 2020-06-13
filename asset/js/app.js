@@ -1,4 +1,5 @@
 (function () {
+	var sliderrange;
     var poiLayers = [];
     var radiusLTE700 = [];
     var radiusLTE1800 = [];
@@ -58,21 +59,22 @@
         position: 'topright',
         min: 1,
         max: 20,
-        value: 1,
+        value: 2,
         step: 0.5,
         orient: 'vertical',
         icon: false,
         id: slider,
     });
 
-    /*Nettoyage de la cadre lors du changement de distance*/
+    /*Nettoyage de la carte lors du changement de distance*/
     slider.on('input change', function (e) {
         map.removeLayer(antennesLayer);
         poiLayers.clearLayers();
         radiusLTE700.clearLayers();
         radiusLTE1800.clearLayers();
         radiusLTE2600.clearLayers();
-        queryFeatures(currentPos, e.value);
+		sliderrange = e.value;
+        queryFeatures(currentPos, sliderrange);
     });
     map.addControl(slider);
 
@@ -91,7 +93,7 @@
         map.removeLayer(radiusLTE700);
         map.removeLayer(radiusLTE1800);
         map.removeLayer(radiusLTE2600);
-        queryFeatures(currentPos, 1);
+        queryFeatures(currentPos, sliderrange);
 
     }).addTo(map);
 
