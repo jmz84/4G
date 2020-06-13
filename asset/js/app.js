@@ -183,7 +183,7 @@
                 }).bindTooltip('ID Support :' + valuepoint.sup_id + '</br>Distance : ' + distance.toLocaleString() + ' km');
                 poiLayers.addLayer(poi);
                 poiLayers.addTo(map);
-
+		
                 /*On affiche le 1er type d'antenne*/
                 if (valuepoint.emr_lb_systeme == "LTE 700") {
                     LTE700 = L.circle(l.getLatLng(), {
@@ -231,8 +231,7 @@
             }
         });
 
-        /*On vole jusqu'au groupe de points*/
-        map.fitBounds(bounds.getBounds());
+
 
         /*On affiche*/
         map.addLayer(antennesLayer);
