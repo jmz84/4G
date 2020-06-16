@@ -157,7 +157,7 @@
 	});
 
 	function queryFeatures(currentPos, numResults) {
-		console.log(currentPos + " " +numResults );
+		//console.log(currentPos + " " +numResults );
 		var distances = [];
 		var infos = [];
 		antennes.eachLayer(function (l) {
