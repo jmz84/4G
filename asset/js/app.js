@@ -43,7 +43,7 @@
 	var actionreport = L.control({position: 'topleft'});
 	actionreport.onAdd = function (map) {
 		var div = L.DomUtil.create('div', 'actionreport');
-		div.innerHTML = '<form><input id="report" type="button"/>LTE700</form>';
+		div.innerHTML = '<form><input class="report "id="report" type="button"/></form>';
 		return div;
 	};
 
@@ -83,12 +83,12 @@
 
 
 	/*Ajout du bloc légende*/
-	var legend = L.control({
+	var legende = L.control({
 		position: "bottomright"
 	});
 
-	legend.onAdd = function (map) {
-		var div = L.DomUtil.create("div", "legend");
+	legende.onAdd = function (map) {
+		var div = L.DomUtil.create("div", "legende");
 		div.innerHTML += "<h4>Légende</h4>";
 		div.innerHTML += '<i style="background: rgba(0, 255, 0, 0.2) "></i><span>LTE 700 - 10Km</span><br>';
 		div.innerHTML += '<i style="background: rgba(0, 0, 255, 0.2)"></i><span>LTE 1800 - 6Km</span><br>';
@@ -96,7 +96,7 @@
 		div.innerHTML += '<br>Base mise à jour le 13/06/2020';
 		return div;
 	};
-	legend.addTo(map);
+	legende.addTo(map);
 
 	/*Ajout du selecteur de distance*/
 	var slider = L.control.range({

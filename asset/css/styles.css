@@ -174,7 +174,7 @@ tr {
 }
 
 /*Legende des fréquences*/
-.legend {
+.legende {
   padding: 6px 8px;
   font: 14px Arial, Helvetica, sans-serif;
   background: white;
@@ -183,19 +183,19 @@ tr {
   color: #555;
 }
 
-.legend h4 {
+.legende h4 {
   text-align: center;
   font-size: 16px;
   margin: 2px 12px 8px;
   color: #777;
 }
 
-.legend span {
+.legende span {
   position: relative;
   bottom: 3px;
 }
 
-.legend i {
+.legende i {
   width: 18px;
   height: 18px;
   float: left;
@@ -203,7 +203,7 @@ tr {
   opacity: 0.7;
 }
 
-.legend i.icon {
+.legende i.icon {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
 }
@@ -230,7 +230,7 @@ tr {
   bottom: 3px;
 }
 
-form input {
+input[type=button] {
     border-radius: 4px;
     width: 26px;
     height: 26px;
@@ -245,3 +245,11 @@ form input {
     border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
     border-image: initial;
 }
+
+@media (max-width: 480px) {
+
+  div.leaflet-bottom {
+
+    display: none;
+
+  }
