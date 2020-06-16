@@ -137,7 +137,7 @@
 		map.removeLayer(radiusLTE700);
 		map.removeLayer(radiusLTE1800);
 		map.removeLayer(radiusLTE2600);
-		queryFeatures(currentPos, sliderrange);
+		queryFeatures(currentPos, 0.2);
 
 	}).addTo(map);
 
