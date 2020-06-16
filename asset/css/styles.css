@@ -179,8 +179,6 @@ tr {
   font: 14px Arial, Helvetica, sans-serif;
   background: white;
   background: rgba(255, 255, 255, 0.8);
-  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
-  /*border-radius: 5px;*/
   line-height: 24px;
   color: #555;
 }
@@ -208,4 +206,42 @@ tr {
 .legend i.icon {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
+}
+
+/*Legende des fréquences*/
+.checktag {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  line-height: 24px;
+  color: #555;
+}
+
+.checktag h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.checktag form {
+  position: relative;
+  bottom: 3px;
+}
+
+form input {
+    border-radius: 4px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    background-color: white;
+    background-image: url(/4G/asset/img/print.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-image: initial;
 }
