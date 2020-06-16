@@ -230,7 +230,7 @@ tr {
   bottom: 3px;
 }
 
-input[type=button] {
+.report {
     border-radius: 4px;
     width: 26px;
     height: 26px;
@@ -245,6 +245,23 @@ input[type=button] {
     border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
     border-image: initial;
 }
+
+.geoloc {
+    border-radius: 4px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    background-color: white;
+  background-image: url(/4G/asset/img/geoloc.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-image: initial;
+}
+
 
 @media (max-width: 480px) {
 

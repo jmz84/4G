@@ -38,7 +38,46 @@
 		maxZoom: 20
 	}).addTo(map);
 
+	/*Ajout du bouton de rapport*/
 
+	var actiongeoloc = L.control({position: 'topleft'});
+	actiongeoloc.onAdd = function (map) {
+		var div = L.DomUtil.create('div', 'actiongeoloc');
+		div.innerHTML = '<form><input class="geoloc "id="geoloc" type="button"/></form>';
+		return div;
+	};
+
+	actiongeoloc.addTo(map);
+	geoloc.addEventListener('click', gogeoloc);
+
+	function gogeoloc() {
+	if (!navigator.geolocation){
+                alert("<p>ésolé, votre navigateur ne supporte pas la géolocalisation</p>");
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(success);
+	}
+	
+function success(position) {
+      
+        currentPos = [position.coords.latitude,position.coords.longitude];
+        
+        map.setView(currentPos, 10);
+
+        var myLocation = L.marker(currentPos)
+                            .addTo(map)
+                            .bindTooltip("Vous êtes ici")
+                            .openTooltip();
+	 queryFeatures(currentPos, 0.2);		
+
+}	
+
+    function error() {
+        alert("Impossible de récupérer votre position");
+    };						
+
+	/*Ajout du bouton de rapport*/
 
 	var actionreport = L.control({position: 'topleft'});
 	actionreport.onAdd = function (map) {
@@ -112,6 +151,7 @@
 
 	/*Nettoyage de la carte lors du changement de distance*/
 	slider.on('input change', function (e) {
+		console.log(currentPos);
 		map.removeLayer(antennesLayer);
 		poiLayers.clearLayers();
 		radiusLTE700.clearLayers();
@@ -157,7 +197,6 @@
 	});
 
 	function queryFeatures(currentPos, numResults) {
-		//console.log(currentPos + " " +numResults );
 		var distances = [];
 		var infos = [];
 		antennes.eachLayer(function (l) {
